@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Διαδραστικό Βιογραφικό</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <label for="upload" class="upload-btn">Αλλαγή εικόνας</label>
+            <input type="file" id="upload" accept="image/*" onchange="previewImage(event)">
+            <img id="profile-pic" src="profile.jpg" alt="Προφίλ">
+            <h2>Προσωπικά στοιχεία</h2>
+            <div class="info-container">
+                <div class="info-item">
+                    <i class="fas fa-user"></i>
+                    <input type="text" placeholder="Όνομα">
+                </div>
+                <div class="info-item" id="email-item">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" id="email-input" placeholder="Email">
+                    <a id="email-link-print" href="#" style="display: none;"></a>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-phone"></i>
+                    <input type="tel" placeholder="Τηλέφωνο">
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <input type="text" placeholder="Διεύθυνση">
+                </div>
+            </div>
+            <h2>Προσωπικές δεξιότητες</h2>
+            <div class="info-container" id="skills-container">
+                <div class="info-item">
+                    <i class="fas fa-handshake"></i>
+                    <input type="text" placeholder="Επικοινωνιακές ικανότητες">
+                </div>
+            </div>
+            <button class="add-field-btn" onclick="addField('skills-container')">+</button>
+            <h2>Γλώσσες</h2>
+            <div class="info-container" id="languages-container">
+                <div class="info-item">
+                    <i class="fas fa-globe"></i>
+                    <input type="text" placeholder="Αγγλικά">
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-globe"></i>
+                    <input type="text" placeholder="Ιταλικά">
+                </div>
+            </div>
+            <button class="add-field-btn" onclick="addField('languages-container')">+</button>
+        </div>
+        <div class="main-content">
+            <div class="section" id="profile-section">
+                <h2>Προφίλ</h2>
+                <textarea id="profile-textarea" placeholder="Σύντομη περιγραφή του εαυτού σας"></textarea>
+                <div id="word-limit" class="word-limit">Λέξεις: 0/100</div>
+            </div>
+            <div class="section" id="experience-section">
+                <h2>Επαγγελματική Εμπειρία</h2>
+                <input type="text" placeholder="Θέση & Εταιρεία (π.χ. Project Manager - HotelNow Group)">
+                <input type="text" placeholder="Περιγραφή εργασίας">
+                <input type="text" placeholder="Θέση & Εταιρεία (π.χ. Junior Project Manager - Katikies SA)">
+                <input type="text" placeholder="Περιγραφή εργασίας">
+                <button class="add-field-btn" onclick="addField('experience-section')">+</button>
+            </div>
+            <div class="section" id="education-section">
+                <h2>Εκπαίδευση</h2>
+                <input type="text" placeholder="Πτυχίο (π.χ. MBA - Πανεπιστήμιο Πειραιώς)">
+                <input type="text" placeholder="Πτυχίο (π.χ. Πτυχίο Οικονομικών - Πανεπιστήμιο Πατρών)">
+                <button class="add-field-btn" onclick="addField('education-section')">+</button>
+            </div>
+            <!-- Προσθήκη της ενότητας Portfolio -->
+            <div class="section" id="portfolio-section">
+                <h2>Portfolio</h2>
+                <textarea id="portfolio-textarea" placeholder="Περιγραφή του portfolio σας"></textarea>
+            </div>
+        </div>
+    </div>
+    <button class="print-btn" onclick="prepareForPrint()">Εκτύπωση</button>
+
+    <script src="script.js"></script>
+</body>
+</html>

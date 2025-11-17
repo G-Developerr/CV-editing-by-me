@@ -1,0 +1,254 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f5f5f5;
+    color: #333;
+}
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    background: #ffffff;
+    display: flex;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+.sidebar {
+    width: 30%;
+    background: #1a3a5a;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+.sidebar img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 4px solid white;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+.sidebar img:hover {
+    transform: scale(1.1);
+}
+.sidebar input[type="file"] {
+    display: none;
+}
+.upload-btn {
+    display: inline-block;
+    background: white;
+    color: #1a3a5a;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.3s ease, color 0.3s ease;
+    margin-bottom: 20px;
+}
+.upload-btn:hover {
+    background: #1a3a5a;
+    color: white;
+}
+.info-container {
+    text-align: left;
+    margin-top: 15px;
+}
+.info-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 10px;
+    border-radius: 10px;
+    transition: background 0.3s ease;
+}
+.info-item:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+.info-item i {
+    margin-right: 10px;
+    font-size: 16px;
+    color: #ff6f00;
+}
+.info-item input {
+    flex: 1;
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    background: rgba(255, 255, 255, 0.9);
+    color: #1a3a5a;
+    box-sizing: border-box;
+    width: calc(100% - 30px);
+}
+.info-item a {
+    flex: 1;
+    color: #1a73e8;
+    text-decoration: none;
+    font-size: 14px;
+}
+.main-content {
+    width: 70%;
+    padding: 20px;
+    position: relative;
+    background: white;
+}
+.section h2 {
+    font-size: 1.4em;
+    color: #ff6f00;
+    border-bottom: 2px solid #ff6f00;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+.section input, .section textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-size: 14px;
+    transition: border-color 0.3s ease;
+    font-family: 'Montserrat', sans-serif;
+}
+.section textarea {
+    height: 120px;
+    resize: none;
+    overflow: hidden;
+}
+.word-limit {
+    font-size: 12px;
+    color: #666;
+    margin-top: 5px;
+}
+.word-limit.error {
+    color: #ff6f00;
+}
+.section input:focus, .section textarea:focus {
+    border-color: #ff6f00;
+    outline: none;
+}
+.print-btn {
+    display: block;
+    margin: 20px auto;
+    padding: 12px 24px;
+    background: #1a3a5a;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s ease;
+    font-family: 'Montserrat', sans-serif;
+}
+.print-btn:hover {
+    background: #0d2536;
+}
+.add-field-btn {
+    display: block;
+    margin: 10px 0;
+    padding: 10px 20px;
+    background: #1a3a5a;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.3s ease;
+    font-family: 'Montserrat', sans-serif;
+}
+.add-field-btn:hover {
+    background: #ff6f00;
+}
+@media print {
+    .upload-btn, .add-field-btn {
+        display: none;
+    }
+    .container {
+        box-shadow: none;
+        border-radius: 0;
+        max-width: 100%;
+        margin: 0;
+    }
+    .sidebar {
+        padding: 15px;
+        background: #1a3a5a !important;
+        color: white;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+    .main-content {
+        padding: 15px;
+        background: white;
+    }
+    .print-btn {
+        display: none;
+    }
+    .sidebar h2 {
+        color: white;
+    }
+    .info-item i {
+        color: #ff6f00 !important;
+    }
+    .info-item input {
+        width: calc(100% - 30px) !important;
+        background: rgba(255, 255, 255, 0.9) !important;
+        color: #1a3a5a !important;
+        border: none !important;
+        white-space: normal !important;
+        overflow: visible !important;
+        text-overflow: clip !important;
+        word-wrap: break-word;
+        line-height: 1.5;
+        padding: 10px;
+        font-size: 12px;
+    }
+    .info-item a {
+        color: #1a73e8 !important;
+        text-decoration: none !important;
+    }
+    /* Μετατροπή email σε λινκ κατά την εκτύπωση */
+    .info-item input[type="email"] {
+        display: none !important;
+    }
+    .info-item a#email-link-print {
+        display: inline !important;
+        color: #1a73e8 !important;
+        text-decoration: none !important;
+    }
+    /* Κρύψε το μήνυμα "Λέξεις: 1/100" κατά την εκτύπωση */
+    .word-limit {
+        display: none !important;
+    }
+    /* Μετατροπή links και emails σε clickable κατά την εκτύπωση */
+    #portfolio-textarea {
+        display: none;
+    }
+    #portfolio-textarea + div {
+        display: block !important;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+        border: none !important; /* Αφαίρεση περιγράμματος */
+        border-radius: 0 !important; /* Αφαίρεση στρογγυλεμένων γωνιών */
+        padding: 10px; /* Προσθήκη padding */
+        margin-bottom: 10px; /* Προσθήκη margin */
+        font-family: 'Montserrat', sans-serif; /* Χρήση της ίδιας γραμματοσειράς */
+        font-size: 14px; /* Χρήση του ίδιου μεγέθους γραμματοσειράς */
+    }
+    /* Αφαίρεση περιγράμματος από τα πεδία Προφίλ, Επαγγελματική Εμπειρία, Εκπαίδευση και Portfolio */
+    #profile-section input,
+    #profile-section textarea,
+    #experience-section input,
+    #education-section input,
+    #portfolio-section textarea {
+        border: none !important;
+        border-radius: 0 !important;
+    }
+}
+@media screen {
+    #portfolio-textarea + div {
+        display: none;
+    }
+}
