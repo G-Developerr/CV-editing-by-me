@@ -1,20 +1,22 @@
 <!DOCTYPE html>
 <html lang="el">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Διαδραστικό Βιογραφικό</title>
+    <title>Interactive CV</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div class="container">
         <div class="sidebar">
-            <label for="upload" class="upload-btn">Αλλαγή εικόνας</label>
+            <label for="upload" class="upload-btn">Change image</label>
             <input type="file" id="upload" accept="image/*" onchange="previewImage(event)">
             <img id="profile-pic" src="profile.jpg" alt="Προφίλ">
-            <h2>Προσωπικά στοιχεία</h2>
+            <h2>Personal information</h2>
             <div class="info-container">
                 <div class="info-item">
                     <i class="fas fa-user"></i>
@@ -34,56 +36,57 @@
                     <input type="text" placeholder="Διεύθυνση">
                 </div>
             </div>
-            <h2>Προσωπικές δεξιότητες</h2>
+            <h2>Personal skills</h2>
             <div class="info-container" id="skills-container">
                 <div class="info-item">
                     <i class="fas fa-handshake"></i>
-                    <input type="text" placeholder="Επικοινωνιακές ικανότητες">
+                    <input type="text" placeholder="Communication skills">
                 </div>
             </div>
             <button class="add-field-btn" onclick="addField('skills-container')">+</button>
-            <h2>Γλώσσες</h2>
+            <h2>Languages</h2>
             <div class="info-container" id="languages-container">
                 <div class="info-item">
                     <i class="fas fa-globe"></i>
-                    <input type="text" placeholder="Αγγλικά">
+                    <input type="text" placeholder="English">
                 </div>
                 <div class="info-item">
                     <i class="fas fa-globe"></i>
-                    <input type="text" placeholder="Ιταλικά">
+                    <input type="text" placeholder="Italian">
                 </div>
             </div>
             <button class="add-field-btn" onclick="addField('languages-container')">+</button>
         </div>
         <div class="main-content">
             <div class="section" id="profile-section">
-                <h2>Προφίλ</h2>
-                <textarea id="profile-textarea" placeholder="Σύντομη περιγραφή του εαυτού σας"></textarea>
-                <div id="word-limit" class="word-limit">Λέξεις: 0/100</div>
+                <h2>Profile</h2>
+                <textarea id="profile-textarea" placeholder="Brief description of yourself"></textarea>
+                <div id="word-limit" class="word-limit">Words: 0/100</div>
             </div>
             <div class="section" id="experience-section">
-                <h2>Επαγγελματική Εμπειρία</h2>
-                <input type="text" placeholder="Θέση & Εταιρεία (π.χ. Project Manager - HotelNow Group)">
-                <input type="text" placeholder="Περιγραφή εργασίας">
-                <input type="text" placeholder="Θέση & Εταιρεία (π.χ. Junior Project Manager - Katikies SA)">
-                <input type="text" placeholder="Περιγραφή εργασίας">
+                <h2>Professional Experience</h2>
+                <input type="text" placeholder="Position & Company (e.g. Project Manager - HotelNow Group)">
+                <input type="text" placeholder="Job description">
+                <input type="text" placeholder="Position & Company (e.g. Junior Project Manager - Katikies SA)">
+                <input type="text" placeholder="Job description">
                 <button class="add-field-btn" onclick="addField('experience-section')">+</button>
             </div>
             <div class="section" id="education-section">
-                <h2>Εκπαίδευση</h2>
-                <input type="text" placeholder="Πτυχίο (π.χ. MBA - Πανεπιστήμιο Πειραιώς)">
-                <input type="text" placeholder="Πτυχίο (π.χ. Πτυχίο Οικονομικών - Πανεπιστήμιο Πατρών)">
+                <h2>Education</h2>
+                <input type="text" placeholder="Degree (e.g. MBA - University of Piraeus)">
+                <input type="text" placeholder="Degree (e.g. Degree in Economics - University of Patras)">
                 <button class="add-field-btn" onclick="addField('education-section')">+</button>
             </div>
             <!-- Προσθήκη της ενότητας Portfolio -->
             <div class="section" id="portfolio-section">
                 <h2>Portfolio</h2>
-                <textarea id="portfolio-textarea" placeholder="Περιγραφή του portfolio σας"></textarea>
+                <textarea id="portfolio-textarea" placeholder="Description of your portfolio"></textarea>
             </div>
         </div>
     </div>
-    <button class="print-btn" onclick="prepareForPrint()">Εκτύπωση</button>
+    <button class="print-btn" onclick="prepareForPrint()">Print</button>
 
     <script src="script.js"></script>
 </body>
+
 </html>
